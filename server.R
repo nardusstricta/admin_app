@@ -8,26 +8,13 @@
 library(DT)
 library(tidyverse)
 library(shiny)
-#library(lubridate)
-#library(shinydashboard)
-library(semantic.dashboard)
-library(shiny.semantic)
-#library(magrittr)
-library(shinyjs)
+library(shinydashboard)
+
 library(mailR)
 library(rmarkdown)
 library(tinytex)
-#library(rdrop2)
 
-#rating:
-jsCode <- "
-$('.ui.rating')
-  .rating({
-    initialRating: 3,
-    maxRating: 5
-  })
-;
-"
+
 
 
 fun_preis <- function(berg, fluss, standt, land, euland){
@@ -55,12 +42,8 @@ fun_preis <- function(berg, fluss, standt, land, euland){
 
 shinyServer(function(input, output, session){
   
-  #rating
-  runjs(jsCode)
   
   observe({
-    # We'll use the input$controller variable multiple times, so save it as x
-    # for convenience.
     xname <- input$vorname
     xnachname <- input$nachname
     # This will change the value of input$inText, based on x
@@ -192,37 +175,15 @@ shinyServer(function(input, output, session){
     tagList("", url_euland)
   })
   
-  
-  output$value_box <- renderUI({
+  output$table1 <- renderTable({
     erg_port <- fun_preis(berg = input$nberg,
                           fluss = input$nfluss,
                           standt = input$nstadt, 
                           land = input$nland, 
                           euland = input$neuland)
     table_data$Lisa <- c(erg_port[1], erg_port[2], erg_port[1]+erg_port[2])
-      colnames(table_data) <- c("Name", input$vorname, input$nachname)
-
-      div(class = "ui raised segment", style="margin-left: 20px; max-width: 350px; width: 100%",
-          a(class="ui green ribbon label", "Deine  Bestellung"),
-          p(),
-          xtable::xtable(table_data) %>%
-            print(html.table.attributes="class = 'ui very basic collapsing celled table'",
-                  type = "html", include.rownames = F, print.results = F) %>%
-            HTML
-    )
-  })
-  
-  
-  
-
-  
-  #output$test <- renderUI({
-    #tagList(
-     # tags$button(id="addButton", class="ui yellow button", "Kaufen", onclick="")
-      #)
-  #})
-  
- 
-
-
+    colnames(table_data) <- c("Name", input$vorname, input$nachname)
+    table_data
+  }
+  )
 })

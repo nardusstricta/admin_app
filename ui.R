@@ -1,16 +1,11 @@
-#library(shiny)
+library(shiny)
 library(DT)
 library(tidyverse)
-#library(lubridate)
 library(shinydashboard)
-library(semantic.dashboard)
-library(shiny.semantic)
-#library(magrittr)
-library(shinyjs)
 library(mailR)
 library(rmarkdown)
 library(tinytex)
-#library(rdrop2)
+
 
 #Dataimport
 
@@ -27,29 +22,29 @@ kunden <<- read_csv("kunden.csv",
 
 #Preis Funktion:
 shinyUI(
-
   dashboardPage(
 dashboardHeader(
-  color = "blue",
-  title = "Spiele direkt beim Herausgeber Wendelin Holz kaufen",
-  inverted = TRUE
+  title = "Wendels Spiele kaufen"
   ),
   
   
 dashboardSidebar(
-  size = "wide", color = "teal",
+  tags$style(HTML("
+      .main-sidebar{
+        width: 500px;
+      }
+    ")),
     sidebarMenu(
       menuItem(tabName = "home", text = "Einkauf", icon = icon("home")),
       menuItem(tabName = "Impresum", text = "Impressum", icon = icon("heart"))
     ),
-    div(class = "ui horizontal divider", "Anschrift"),
+    splitLayout(
       textInput("vorname", "Vorname"),
-      textInput("nachname", "Nachname"),
+      textInput("nachname", "Nachname")
+    ),
       selectInput("geschlecht", "Geschlecht",  choices = c("", "Herr", "Frau")
       ),
-      
-    div(class = "ui horizontal divider", uiicon("tag"), 
-        "Lieferadresse"),
+    
       textInput("lvorname", "Vorname"),
       textInput("lnachname", "Nachname"),
       textInput("email", "E-Mail"),
@@ -60,51 +55,50 @@ dashboardSidebar(
       textInput("stadt", "Stadt"),
       textInput("land", "Land"),
     actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")
-    
-    #shinyjs::useShinyjs(),
-    #uiOutput("test")
-    
-    #div(class = "ui yellow button", "Kaufen")
-
-    
   ),
   
 dashboardBody(
+  tags$head(tags$style(HTML(' .main-sidebar{ width: 500px; } .main-header > .navbar { margin-left: 500px; } .main-header .logo { width: 500px; } .content-wrapper, .main-footer, .right-side { margin-left: 500px; } '))),
     tabItems(
       # First tab content
       tabItem(tabName = "home",
               fluidRow(
+                column(width = 6,
                 box(
-                  
-                  numericInput("nberg", "Anzahl", value = 0, min = 0, max = 10000, step = 1),
-                  uiOutput("tab_berg"),
-                  img(src = "tit.png", height = 60, width = 40),
-                  shinyjs::useShinyjs(),
-                  div(class = "ui star rating"),
-                  div(class = "ui divider"),
+                  title = uiOutput("tab_berg"), status = "primary", solidHeader = TRUE,
+                  splitLayout(
+                  img(src = "tit.png", height = 110, width = 80),
+                  numericInput("nberg", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
+                  )
+                ))
+                ),
+                box(
+
+
                   
                   numericInput("nfluss", "Anzahl", value = 0, min = 0, max = 10000, step = 1),
                   uiOutput("tab_fluss"),
                   img(src = "tit1.png", height = 60, width = 40),
-                  div(class = "ui divider"),
+
                   
                   numericInput("nstadt", "Anzahl", value = 0, min = 0, max = 10000, step = 1),
                   uiOutput("tab_stadt"),
                   img(src = "tit2.png", height = 60, width = 40),
-                  div(class = "ui divider"),
+
                   
                   numericInput("euland", "Anzahl", value = 0, min = 0, max = 10000, step = 1),
                   uiOutput("tab_euland"),
                   img(src = "tit2.png", height = 60, width = 40),
-                  div(class = "ui divider"),
+
                   
                   numericInput("nland", "Anzahl", value = 0, min = 0, max = 10000, step = 1),
                   uiOutput("tab_land"),
                   img(src = "tit.png", height = 60, width = 40)
                 ),
-                
-                valueBoxOutput("value_box"), title = "", theme = NULL)
-              
+                box(
+                  title = "Dein Einkauf", status = "warning", solidHeader = TRUE,
+                tableOutput('table1')
+                )
                 ),
       
       # Second tab content
@@ -114,8 +108,8 @@ dashboardBody(
              Datenschutz und so. Komm mach schon!! traust du dich eh nicht, mein Papa ist Staatsanwalt :)")
               )
       )
-    )
   ))
+)
 )
 
 
