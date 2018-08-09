@@ -1,0 +1,13 @@
+name: admin_app
+title: admin_app
+username:
+account: nardus
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 392759
+bundleId: 1526437
+url: https://nardus.shinyapps.io/admin_app/
+when: 1533823741.23721
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: test_app.R
