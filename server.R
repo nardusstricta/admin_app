@@ -68,7 +68,7 @@ shinyServer(function(input, output, session){
       id_temp <- max(kunden$ID) + 1
     }
     
-    newline <- isolate(data.frame(KundenNR = paste0(format(Sys.Date(), "%Y-%m"),"P"),
+    newline <<- isolate(data.frame(KundenNR = paste0(format(Sys.Date(), "%Y-%m"),"P"),
                                   ID = id_temp,
                                   Name = input$vorname,
                                   Nachname = input$nachname,
@@ -98,8 +98,8 @@ shinyServer(function(input, output, session){
                             RechnungsNR = paste0(newline$KundenNR, newline$ID),
                             Produkt = paste(input$nberg,"* Berge;",
                                             input$nfluss, "*Flüsse;",
-                                            input$stadt, "*Städte;",
-                                            input$land, "*Länder;", 
+                                            input$nstadt, "*Städte;",
+                                            input$nland, "*Länder;", 
                                             input$euland, "*EU-Länder"),
                             soll = erg_temp[1] + erg_temp[2],
                             saldo = c(0),
@@ -125,7 +125,7 @@ shinyServer(function(input, output, session){
     tempReport <- file.path(tempdir(), "report.Rmd")
     file.copy("report.Rmd", tempReport, overwrite = TRUE)
     # Set up parameters to pass to Rmd document
-    params <- list(n = cbind(newline_2, newline))
+    params <<- list(n = cbind(newline_2, newline))
     rmarkdown::render(tempReport,
                       params = params,
                       envir = new.env(parent = globalenv()))

@@ -5,9 +5,9 @@ account: nardus
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 392759
-bundleId: 1526437
+bundleId: 1528249
 url: https://nardus.shinyapps.io/admin_app/
-when: 1533823741.23721
+when: 1533894558.43839
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: test_app.R

@@ -30,12 +30,11 @@ dashboardHeader(
   
 dashboardSidebar(
   tags$head(tags$style(HTML(".shiny-split-layout > div { overflow: visible;}"))), 
-  tags$style(HTML("
-      .main-sidebar{
-        width: 500px;
-position:fixed; overflow: visible;
-      }
-    ")),
+  #tags$style(HTML("
+      #.main-sidebar{
+        #width: 300px;
+      #}
+   # ")),
     sidebarMenu(
       menuItem(tabName = "home", text = "home", icon = icon("home")),
       menuItem(tabName = "Kundendaten", text = "Kundendaten", icon = icon("shopping-cart"),
@@ -66,10 +65,11 @@ position:fixed; overflow: visible;
   )),
   
 dashboardBody(
-  tags$head(tags$style(HTML(' .main-sidebar{ width: 500px; } .main-header > .navbar { margin-left: 500px; } .main-header .logo { width: 500px; } .content-wrapper, .main-footer, .right-side { margin-left: 500px; } '))),
+  #tags$head(tags$style(HTML(' .main-sidebar{ width: 500px; } .main-header > .navbar { margin-left: 500px; } .main-header .logo { width: 500px; } .content-wrapper, .main-footer, .right-side { margin-left: 500px; } '))),
     tabItems(
       # First tab content
       tabItem(tabName = "home",
+              fluidRow(
               box(
               fluidRow(
                 #column(width = 6,
@@ -108,12 +108,11 @@ dashboardBody(
                     numericInput("nland", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
                   )
                 )
-                #)
                 )),
                 box(
                   title = "Dein Einkauf", status = "warning", solidHeader = TRUE,
                 tableOutput('table1')
-                ))
+                )))
                 ,
       
       # Second tab content
