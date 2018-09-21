@@ -1,0 +1,13 @@
+name: kartenspielshop
+title: kartenspielshop
+username:
+account: wendels
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 398210
+bundleId: 1530036
+url: https://wendels.shinyapps.io/kartenspielshop/
+when: 1533982587.74817
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: test_app.R

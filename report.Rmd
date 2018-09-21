@@ -1,6 +1,6 @@
 ---
-title: "Ihre Honig Rechnung"
-author: "Imkerei Holz"
+title: "Ihre Kartenspiel Rechnung"
+author: "Wendelin Holz"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
 params:
@@ -40,25 +40,57 @@ knitr::knit_hooks$set( output = function(x, options) {
 knitr::opts_template$set("kill_prefix"=list(comment=NA, null_prefix=TRUE))
 ```
 
-```{r, include=FALSE}
+
+
+```{r einladen, include=FALSE}
 # The `params` object is available in the document.
 library(knitr)
+library(shiny)
 temp_rech <- params$n
+```
 
+```{r, echo=FALSE}
+shiny::fluidPage(
+shiny::img(src='www/logo.png', align = "right",width=100,height=100)
+)
 ```
 
 ```{r salud, echo=FALSE, message=FALSE, warning=FALSE, comment=NA, null_prefix=TRUE}
-noquote(c("Liebe/r", as.character(temp_rech[1,2])))
+if(as.character(temp_rech[1,11]) == "Herr"){
+  noquote(c("Lieber", paste(as.character(temp_rech[1,9]), as.character(temp_rech[1,10]))))
+}else{
+  noquote(c("Liebe", paste(as.character(temp_rech[1,9]), as.character(temp_rech[1,10]))))
+}
+
 ```
-Dies ist die Rechung ihrer letztn Honigbestellung bei unserer Imkerei. Bitte überweisen sie den Betrag  auf folgendes Konto: IBAN: DE15 12030000 10.
+vielen Dank für die Bestellung der Kartenspiele über die Städte und Flüsse der Welt. 
+Hiermit berechne ich folgendes: 
+
+
 
 ```{r zusammenfassung33, echo=FALSE, message=FALSE, warning=FALSE, null_prefix=TRUE}
 
-kable(temp_rech, caption = paste0("RN:", temp_rech[1,8]))
+kable(temp_rech[1,3], caption = paste0("RN:", temp_rech[1,2]))
 
 ```
 
 Das macht eine gesamt Summe von:
 ```{r zusammenfassung3, echo=FALSE, message=FALSE, warning=FALSE, comment=NA, null_prefix=TRUE}
-noquote(paste0(sum(as.numeric(temp_rech[,7])), "Euro"))
+noquote(paste0(sum(as.numeric(temp_rech[1,4])), "Euro"))
 ```
+Diese Leistung ist umsatzsteuerfrei gemäß § 19 Umsatzsteuergesetz. Zahlung soweit keine weitere Rücksprache innerhalb von 14 Tagen ab Lieferdatum.
+
+Bankverbindung:  Kto.-Inhaber: Werner Holz,  (...)
+
+Beste Grüße, 
+Wendelin Holz
+
+
+				
+				
+					
+				
+			
+				
+				
+				

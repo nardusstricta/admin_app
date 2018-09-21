@@ -24,94 +24,90 @@ kunden <<- read_csv("kunden.csv",
 shinyUI(
   dashboardPage(
 dashboardHeader(
-  title = "Wendels Spiele kaufen"
+  title = "Wendels Kartenspiele kaufen"
   ),
   
   
 dashboardSidebar(
-  tags$head(tags$style(HTML(".shiny-split-layout > div { overflow: visible;}"))), 
-  #tags$style(HTML("
-      #.main-sidebar{
-        #width: 300px;
-      #}
-   # ")),
     sidebarMenu(
       menuItem(tabName = "home", text = "home", icon = icon("home")),
-      menuItem(tabName = "Kundendaten", text = "Kundendaten", icon = icon("shopping-cart"),
-        splitLayout(
-          textInput("vorname", "Vorname"),
-          textInput("nachname", "Nachname"),
-          selectInput("geschlecht", "Geschlecht",  
-                      choices = c("", "Herr", "Frau"),  width="120px"#,
-          )
-      ),
-  p("Lieferadresse:"),
-  splitLayout(
-      textInput("lvorname", "Vorname"),
-      textInput("lnachname", "Nachname")
-  ),
-      textInput("email", "E-Mail"),
-  splitLayout(
-      textInput("strasse", "Straße"),
-      textInput("nr", "Hausnummer")),
-  splitLayout(
-      textInput("plz", "PLZ"),
-      textInput("stadt", "Stadt")),
-  splitLayout(
-      textInput("land", "Land"),
-    actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")
-  )),
+      menuItem(tabName = "Dein Einkauf", text = "Dein Einkauf", icon = icon("shopping-cart"),
+               width = "300px",
+               br(),
+               br(),
+               tableOutput("table1"),
+               actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")
+               ),
   menuItem(tabName = "Impresum", text = "Impressum", icon = icon("heart"))
   )),
   
 dashboardBody(
-  #tags$head(tags$style(HTML(' .main-sidebar{ width: 500px; } .main-header > .navbar { margin-left: 500px; } .main-header .logo { width: 500px; } .content-wrapper, .main-footer, .right-side { margin-left: 500px; } '))),
     tabItems(
       # First tab content
       tabItem(tabName = "home",
               fluidRow(
               box(
               fluidRow(
-                #column(width = 6,
                 box(
                   title = uiOutput("tab_berg"), status = "primary", solidHeader = TRUE,
                   splitLayout(
-                  img(src = "tit.png", height = 110, width = 80),
+                  img(src = "titB.png", height = 110, width = 80),
                   numericInput("nberg", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
                   )
                 ),
                 box(
                   title = uiOutput("tab_fluss"), status = "primary", solidHeader = TRUE,
                   splitLayout(
-                    img(src = "tit1.png", height = 110, width = 80),
+                    img(src = "titF.png", height = 110, width = 80),
                     numericInput("nfluss", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
                   )
                 ),
                 box(
                   title = uiOutput("tab_stadt"), status = "primary", solidHeader = TRUE,
                   splitLayout(
-                    img(src = "tit2.png", height = 110, width = 80),
+                    img(src = "titS.png", height = 110, width = 80),
                     numericInput("nstadt", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
                   )
                 ),
                 box(
                   title = uiOutput("tab_euland"), status = "primary", solidHeader = TRUE,
                   splitLayout(
-                    img(src = "tit2.png", height = 110, width = 80),
+                    img(src = "titEL.png", height = 110, width = 80),
                     numericInput("euland", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
                   )
                 ),
                 box(
                   title = uiOutput("tab_land"), status = "primary", solidHeader = TRUE,
                   splitLayout(
-                    img(src = "tit2.png", height = 110, width = 80),
+                    img(src = "titFL.png", height = 110, width = 80),
                     numericInput("nland", "Anzahl", value = 0, min = 0, max = 10000, step = 1)
                   )
                 )
                 )),
-                box(
-                  title = "Dein Einkauf", status = "warning", solidHeader = TRUE,
-                tableOutput('table1')
+                box(title = "Kundendaten", background = "black",
+                  splitLayout(tags$style(HTML(".shiny-split-layout > div { overflow: visible;}")),
+                    textInput("vorname", "Vorname"),
+                    textInput("nachname", "Nachname"),
+                    selectInput("geschlecht", "Anrede",  
+                                choices = c("", "Herr", "Frau"),  width="120px"#,
+                    )
+                  ),
+                  p("Lieferadresse:"),
+                  splitLayout(
+                    textInput("lvorname", "Vorname"),
+                    textInput("lnachname", "Nachname")
+                  ),
+                  textInput("email", "E-Mail"),
+                  splitLayout(
+                    textInput("strasse", "Straße"),
+                    textInput("nr", "Hausnummer")),
+                  splitLayout(
+                    textInput("plz", "PLZ"),
+                    textInput("stadt", "Stadt")),
+                  splitLayout(
+                    textInput("land", "Land"),
+                    actionButton("addButton2", "Kaufen", style = "color: black;background-color: yellow")
+                  )
                 )))
                 ,
       
