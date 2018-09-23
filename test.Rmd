@@ -1,0 +1,59 @@
+---
+size: 11pt
+
+
+output: 
+  pdf_document
+---
+
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+#temp_rech <<- params$n
+name <- temp_rech$Name
+Adresse <- "Sachsenkamstraße 17"
+Ort <- "Zauberstadt"
+erg <- 5*20/4*33
+```
+
+\begin{flushright}
+\includegraphics{logo.png}
+\end{flushright}
+
+
+\today
+
+| `r name`
+| `r Adresse`
+| `r Ort`
+| `r erg`
+
+
+\vspace{3cm}
+
+**Re: The Topic**
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Links, for example [this one to the Hartley Group
+website](http://www.hartleygroup.org), are easily included. Note, for example,
+that items in the header are hyperlinked to the relevant urls.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+test1 <- head(iris)
+kable(test1, padding = 0.5, escape = F) %>%
+  kable_styling("striped", full_width = T)
+library(pander)
+pander(test1)
+```
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

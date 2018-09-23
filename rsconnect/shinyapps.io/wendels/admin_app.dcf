@@ -1,0 +1,12 @@
+name: admin_app
+title: admin_app
+username:
+account: wendels
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 398207
+bundleId: 1528413
+url: https://wendels.shinyapps.io/admin_app/
+when: 1533902196.05389
+asMultiple: FALSE
+asStatic: FALSE

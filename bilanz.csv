@@ -1,51 +1,35 @@
-KundenNR,RechnungNR,Produkt ,soll,saldo ,Datum 
-"2018-08P","2018-08P3","10 * Berge; 3 *Flüsse; Freiburg *Städte; Deutschland *Länder; 6 *EU-Länder",84,0,2018-08-09
-"2018-08P","2018-08P4","0 * Berge; 0 *Flüsse; Freiburg *Städte; Germany *Länder; 0 *EU-Länder",2.5,0,2018-08-09
-"2018-08P","2018-08P5","0 * Berge; 0 *Flüsse; dfxsadsf *Städte; fdsafdsa *Länder; 0 *EU-Länder",2.5,0,2018-08-09
-"2018-08P","2018-08P6","1 * Berge; 16 *Flüsse; sagfsadf *Städte; gbgsdsagf *Länder; 0 *EU-Länder",140,0,2018-08-09
-"2018-08P","2018-08P7","0 * Berge; 0 *Flüsse; Freiburg *Städte; Germany *Länder; 0 *EU-Länder",2.5,0,2018-08-09
-"2018-08P","2018-08P8","19 * Berge; 0 *Flüsse; Buchenbach *Städte; Germany *Länder; 0 *EU-Länder",76,0,2018-08-09
-"2018-08P","2018-08P9","2 * Berge; 4 *Flüsse; fdsafdsa *Städte; fdsafdsa *Länder; 13 *EU-Länder",44,0,2018-08-09
-"2018-08P","2018-08P10","0 * Berge; 0 *Flüsse; Buchenbach *Städte; Germany *Länder; 0 *EU-Länder",2.5,0,2018-08-09
-"2018-08P","2018-08P11","4 * Berge; 2 *Flüsse; Freiburg *Städte; Germany *Länder; 4 *EU-Länder",36,0,2018-08-09
-"2018-08P","2018-08P12","0 * Berge; 0 *Flüsse; Buchenbach *Städte; Germany *Länder; 0 *EU-Länder",2.5,0,2018-08-09
-"2018-08P","2018-08P13","12 * Berge; 0 *Flüsse; dsafsadf *Städte; gfdsatrew *Länder; 0 *EU-Länder",48,0,2018-08-09
-"2018-08P","2018-08P14","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P15","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P16","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P17","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P18","12 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",48,0,2018-08-10
-"2018-08P","2018-08P19","13 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",52,0,2018-08-10
-"2018-08P","2018-08P20","12 * Berge; 0 *Flüsse; 23 *Städte; 0 *Länder; 12 *EU-Länder",140,0,2018-08-10
-"2018-08P","2018-08P21","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P22","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P23","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P24","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P25","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P26","0 * Berge; 0 *Flüsse; 0 *Städte; 0 *Länder; 0 *EU-Länder",2.5,0,2018-08-10
-"2018-08P","2018-08P27","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P28","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P29","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P30","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P1","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P1","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P31","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P32","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P33","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P34","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P35","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-10
-"2018-08P","2018-08P36","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P37","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P38","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P39","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P40","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P41","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P42","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P43","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P44","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P45","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P46","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P47","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P48","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P49","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
-"2018-08P","2018-08P50","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,2018-08-11
+KundenID,RechnungNR,Produkt ,soll,saldo ,porto,Datum 
+1,01072018P,10 * Berge,0,3,3,2018-08-12
+2,"20180812P","0 * Berge; 4 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 3 * Länder Europas",28,0,0,2018-08-12
+3,"20180903P","0 * Berge; 0 * Flüsse; 4 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",20.5,0,2.5,2018-09-03
+1,"20180921P","0 * Berge; 0 * Flüsse; 2 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",11.5,0,2.5,2018-09-21
+1,"20180921P","6 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",24,0,0,2018-09-21
+1,"20180921P","6 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",24,0,0,2018-09-21
+4,"20180921P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 3 * Länder Europas",14.5,0,2.5,2018-09-21
+5,"20180921P","0 * Berge; 0 * Flüsse; 0 * Städte; 3 * Ferne-Länder; 0 * Länder Europas",14.5,0,2.5,2018-09-21
+1,"20180921P","12 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",48,0,0,2018-09-21
+1,"20180921P","0 * Berge; 0 * Flüsse; 12 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",48,0,TRUE,2018-09-21
+1,"20180921P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 12 * Länder Europas",48,0,TRUE,2018-09-21
+1,"20180921P","23 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",92,0,TRUE,2018-09-21
+7,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+8,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+1,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+1,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+9,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+1,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+1,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+10,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+1,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 5 * Länder Europas",25,0,FALSE,2018-09-23
+11,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+12,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+13,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+14,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+1,"20180923P","1 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 1 * Länder Europas",11.5,0,FALSE,2018-09-23
+15,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+16,"20180923P","0 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",2.5,0,FALSE,2018-09-23
+17,"20180923P","0 * Berge; 0 * Flüsse; 1 * Städte; 0 * Ferne-Länder; 2 * Länder Europas",14.5,0,FALSE,2018-09-23
+18,"20180923P","6 * Berge; 2 * Flüsse; 1 * Städte; 0 * Ferne-Länder; 0 * Länder Europas",36,0,FALSE,2018-09-23
+19,"20180923P","1 * Berge; 0 * Flüsse; 7 * Städte; 0 * Ferne-Länder; 2 * Länder Europas",40,0,FALSE,2018-09-23
+20,"20180923P","0 * Berge; 1 * Flüsse; 2 * Städte; 1 * Ferne-Länder; 1 * Länder Europas",25,0,FALSE,2018-09-23
+20,"20180923P","1 * Berge; 1 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 1 * Länder Europas",14.5,0,FALSE,2018-09-23
+21,"20180923P","1 * Berge; 0 * Flüsse; 1 * Städte; 1 * Ferne-Länder; 1 * Länder Europas",20.5,0,FALSE,2018-09-23

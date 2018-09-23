@@ -1,0 +1,97 @@
+---
+size: 11pt
+
+output: 
+  pdf_document
+params:
+  n: NA
+---
+
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+#temp_rech <<- as.data.frame(params$n)
+paramshinter <- params
+Name <- paste(params$n$Lvorname, params$n$Lname)
+Adresse <- paste(params$n$Strasse, params$n$Hausnummer)
+Ort <- paste(params$n$PLZ, params$n$Stadt)
+Land <- params$n$Land
+geschlecht <- params$n$Geschlecht
+RN <- params$n$RechnungNR
+
+```
+
+\begin{flushright}
+\includegraphics[width=50mm]{logo.png}
+\end{flushright}
+
+| Wendelin Holz
+| Sachsenkamstraße 17
+| 81369 München
+| holzwendelin@gmail.com
+| www.wendels-kartenspiele.de
+
+
+| **An**
+| **`r Name`**
+| **`r Adresse`**
+| **`r Ort`**
+| **`r Land`**
+
+
+
+\vspace{3cm}
+
+\begin{flushright}
+\today
+\end{flushright}
+**Rechnung Nr. `r RN` **
+
+
+Hallo `r geschlecht` `r Name`,  
+
+vielen Dank für die Bestellung der Trumpfquartette von Wendels Kartenspiele.
+Hiermit berechne ich folgendes:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(pander)
+
+numb <- strsplit(as.character(paramshinter$n$Produkt), ";")[[1]]
+erg <- numeric(0)
+for (i in 1:5){
+  erg[i]<- as.numeric(strsplit(numb[i],"\\*")[[1]][1])
+}
+preis <- (paramshinter$n$soll - as.numeric(paramshinter$n[,21]))/ sum(erg) 
+preis1 <- numeric(5)
+preis1[which(erg != 0)] <- preis
+
+tab <- data.frame(Artikel = c("Berge Quartett", "Flüsse Quartett", "Städte Quartett", "Ferne Länder Quartett", "Länder Europas Quartett"), Art.Nr = c(1:5), Menge = erg, Stückpreis = preis1, Gesamtpreis=erg*preis1)
+
+pander(tab)
+```
+
+\begin{flushright}
+Summe : `r paramshinter$n$soll ` €
+
+Versandkosten: `r paramshinter$n[,21] ` €
+
+\textbf{Gesamtbetrag: `r paramshinter$n$soll + paramshinter$n[,21] ` € }  
+\end{flushright}
+
+Diese Leistung ist umsatzsteuerfrei gemäß § 19 Umsatzsteuergesetz. Zahlung soweit keine
+weitere Rücksprache innerhalb von 14 Tagen ab Lieferdatum. Bitte geben Sie die
+Rechnungsnummer im Verwendungszweck an, vielen Dank.
+
+
+Beste Grüße,
+
+Wendelin Holz 
+
+
+Bankverbindung:    
+Kontoinhaber: Wendelin Holz    
+IBAN: DE95 1203 0000 1013 3491 78    
+BIC: BYLADEM1001    
+Deutsche Kreditbank AG
