@@ -44,7 +44,8 @@ dashboardSidebar(
                br(),
                br(),
                tableOutput("table1"),
-               actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")
+               actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")#,
+               #startExpanded = T
                ),
   menuItem(tabName = "Impresum", text = "Impressum", icon = icon("heart")),
   menuItem(tabName = "Datenschutz", text = "Datenschutz", icon = icon("user-secret")),

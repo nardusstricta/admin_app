@@ -33,3 +33,4 @@ KundenID,RechnungNR,Produkt ,soll,saldo ,porto,Datum
 20,"20180923P","0 * Berge; 1 * Flüsse; 2 * Städte; 1 * Ferne-Länder; 1 * Länder Europas",25,0,FALSE,2018-09-23
 20,"20180923P","1 * Berge; 1 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 1 * Länder Europas",14.5,0,FALSE,2018-09-23
 21,"20180923P","1 * Berge; 0 * Flüsse; 1 * Städte; 1 * Ferne-Länder; 1 * Länder Europas",20.5,0,FALSE,2018-09-23
+1,"20180923P","2 * Berge; 0 * Flüsse; 0 * Städte; 0 * Ferne-Länder; 3 * Länder Europas",25,0,FALSE,2018-09-23

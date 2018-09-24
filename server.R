@@ -156,11 +156,11 @@ shinyServer(function(input, output, session){
     send.mail(from = sender,
               to = recipients,
               subject= paste("Vielen Dank für ihre Kartenbestellung vom", Sys.Date()),
-              body = paste("Hallo", input$geschlecht, input$lnachname, 
-                           "\n Vielen Dank für die Bestellung der Trumpfquartette von Wendels Kartenspiele.\n
+              body = paste("Hallo", input$geschlecht, input$lnachname, ",\n",
+                           "vielen Dank für die Bestellung der Trumpfquartette von Wendels Kartenspiele.\n
 Die Spiele werden heute oder morgen in die Post gehen. Im Anhang finden Sie die Rechnung zu Ihrer Bestellung, diese sollte innerhalb von zwei Wochen ab Lieferdatum beglichen werden. Bei Fragen stehe ich gerne jederzeit zur Verfügung.\n
 
-Viele Grüße,\n
+Viele Grüße,    
 Wendelin Holz", collapse = '\n'),
               attach.files = paste0(substr(tempReport, 1,nchar(tempReport)-3),"pdf"), #nur für den Kunden
               #smtp = list(host.name = "smtp.gmail.com", port = 465, 
