@@ -17,6 +17,7 @@ library(rdrop2)
 
 
 
+
 fun_preis <- function(berg, fluss, standt, land, euland){
   sum_poduckt <- sum(berg, fluss, standt, land, euland, na.rm = T)
   erg <- c(NA, NA)
@@ -93,7 +94,8 @@ shinyServer(function(input, output, session){
                                   Hausnummer = input$nr,
                                   PLZ = input$plz,
                                   Stadt = input$stadt,
-                                  Land = input$land)
+                                  Land = input$land,
+                                  save_id = print(as.numeric(Sys.time()), digits=20))
     )
     
     write.table(
@@ -120,7 +122,8 @@ shinyServer(function(input, output, session){
                             soll = erg_temp[1] + erg_temp[2],
                             saldo = c(0),
                             new_letter = input$kk,
-                            Datum = Sys.Date()
+                            Datum = Sys.Date(), 
+                            save_id = newline$save_id
                               )
     write.table(
       newline_2, "bilanz.csv", 
@@ -133,7 +136,7 @@ shinyServer(function(input, output, session){
     updateNumericInput(session, "nfluss", value = 0)
     updateNumericInput(session, "nstadt", value = 0)
     updateNumericInput(session, "nland", value = 0)
-    updateNumericInput(session, "neuland", value = 0)
+    updateNumericInput(session, "euland", value = 0)
     
     ##
     #Email an Wendelin
@@ -142,8 +145,8 @@ shinyServer(function(input, output, session){
     sender <- "wendels.kartenspiele@gmail.com"
     recipients <- c("wendels.kartenspiele@gmail.com", input$email)
     
-    tempReport <- file.path(tempdir(), "rechnung.Rmd")
-    file.copy("rechnung.Rmd", tempReport, overwrite = TRUE)
+    tempReport <- file.path(tempdir(), "rechnung_wendels_spiele.Rmd")
+    file.copy("rechnung_wendels_spiele.Rmd", tempReport, overwrite = TRUE)
     
     templogo <- file.path(tempdir(), "logo.png")
     file.copy("logo.png", templogo, overwrite = TRUE)
@@ -155,12 +158,12 @@ shinyServer(function(input, output, session){
     
     send.mail(from = sender,
               to = recipients,
-              subject= paste("Vielen Dank für ihre Kartenbestellung vom", Sys.Date()),
-              body = paste("Hallo", input$geschlecht, input$lnachname, ",\n",
-                           "vielen Dank für die Bestellung der Trumpfquartette von Wendels Kartenspiele.\n
+              subject= "Vielen Dank für Ihre Bestellung bei Wendels Kartenspiele",
+              body = paste0("Hallo ", input$geschlecht, " ",input$lnachname,",\n
+vielen Dank für die Bestellung der Trumpfquartette von Wendels Kartenspiele.\n
 Die Spiele werden heute oder morgen in die Post gehen. Im Anhang finden Sie die Rechnung zu Ihrer Bestellung, diese sollte innerhalb von zwei Wochen ab Lieferdatum beglichen werden. Bei Fragen stehe ich gerne jederzeit zur Verfügung.\n
 
-Viele Grüße,    
+Viele Grüße,   
 Wendelin Holz", collapse = '\n'),
               attach.files = paste0(substr(tempReport, 1,nchar(tempReport)-3),"pdf"), #nur für den Kunden
               #smtp = list(host.name = "smtp.gmail.com", port = 465, 

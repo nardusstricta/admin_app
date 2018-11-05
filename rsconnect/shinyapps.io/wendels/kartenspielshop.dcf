@@ -5,9 +5,9 @@ account: wendels
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 398210
-bundleId: 1600846
+bundleId: 1682595
 url: https://wendels.shinyapps.io/kartenspielshop/
-when: 1537725347.73582
+when: 1541416984.60675
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: agb.pdf|test_app.R|image/logo.png
+ignoredFiles: agb.pdf|bilanz.csv|kunden.csv|rechnung.log|test_app.R|image/logo.png

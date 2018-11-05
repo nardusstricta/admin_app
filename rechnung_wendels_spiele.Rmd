@@ -1,0 +1,102 @@
+---
+size: 11pt
+
+output: 
+  pdf_document
+params:
+  n: NA
+---
+
+
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+#temp_rech <<- as.data.frame(params$n)
+paramshinter <- params
+Name <- paste(params$n$Lvorname, params$n$Lname)
+Adresse <- paste(params$n$Strasse, params$n$Hausnummer)
+Ort <- paste(params$n$PLZ, params$n$Stadt)
+Land <- params$n$Land
+geschlecht <- params$n$Geschlecht
+RN <- paste0(params$n$RechnungNR,params$n$KundenID)
+Ldatum <- params$n$Datum + 3
+```
+
+\begin{flushright}
+\includegraphics[width=50mm]{logo.png}
+\end{flushright}
+
+\vspace{-3cm}
+
+| Wendelin Holz
+| Sachsenkamstraße 17
+| 81369 München
+| holzwendelin@gmail.com
+| www.wendels-kartenspiele.de
+
+\vspace{2cm}
+
+| **An**
+| **`r Name`**
+| **`r Adresse`**
+| **`r Ort`**
+| **`r Land`**
+
+\vspace{1cm}
+
+\begin{flushright}
+\today
+\end{flushright}
+
+**Rechnung Nr. `r RN` **
+
+
+Hallo `r geschlecht` `r Name`,  
+
+vielen Dank für die Bestellung der Trumpfquartette von Wendels Kartenspiele. Das voraussichtliche Lieferdatum ist der `r Ldatum`.
+Hiermit berechne ich folgendes:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(pander)
+
+numb <- strsplit(as.character(paramshinter$n$Produkt), ";")[[1]]
+erg <- numeric(0)
+for (i in 1:5){
+  erg[i]<- as.numeric(strsplit(numb[i],"\\*")[[1]][1])
+}
+preis <- (paramshinter$n$soll - as.numeric(paramshinter$n[,23]))/ sum(erg) 
+preis1 <- numeric(5)
+preis1[which(erg != 0)] <- preis
+
+tab <- data.frame(Artikel = c("Berge Quartett", "Flüsse Quartett", "Städte Quartett", "Ferne Länder Quartett", "Länder Europas Quartett"), Art.Nr = c(1:5), Menge = erg, Stückpreis = paste(format(round(preis1, 2), nsmall = 2), "€"), Gesamtpreis = paste(format(round(erg*preis1, 2), nsmall = 2), "€"))
+tab1 <- tab[which(tab$Menge!=0),]
+tab1 <- as.data.frame(tab1)
+panderOptions('digits', 2)
+pander(tab1)
+```
+
+\begin{flushright}
+Summe : `r format(round(paramshinter$n$soll - as.numeric(paramshinter$n[,23]), 2), nsmall = 2) ` €
+
+Versandkosten: `r format(round(as.numeric(paramshinter$n[,23]), 2), nsmall = 2) ` €
+
+\textbf{Gesamtbetrag: `r format(round(paramshinter$n$soll, 2), nsmall = 2) ` € }  
+\end{flushright}
+
+Diese Leistung ist umsatzsteuerfrei gemäß § 19 Umsatzsteuergesetz. Zahlung soweit keine
+weitere Rücksprache innerhalb von 14 Tagen ab Lieferdatum. Bitte geben Sie die
+Rechnungsnummer im Verwendungszweck an, vielen Dank.
+
+
+| Viele Grüße
+| Wendelin Holz 
+
+\vspace{1cm}
+
+Bankverbindung:    
+Kontoinhaber: Wendelin Holz    
+IBAN: DE95 1203 0000 1013 3491 78    
+BIC: BYLADEM1001    
+Deutsche Kreditbank AG

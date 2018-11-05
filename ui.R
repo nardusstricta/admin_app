@@ -24,7 +24,7 @@ kunden <<- drop_read_csv("/Apps/kunden.csv",
                                         "character","character",
                                         "character","character",
                                         "character",
-                                        "character","character"))
+                                        "character","character", "numeric"))
 
 
 
@@ -40,12 +40,11 @@ dashboardSidebar(
     sidebarMenu(
       menuItem(tabName = "home", text = "home", icon = icon("home")),
       menuItem(tabName = "Dein Einkauf", text = "Dein Einkauf", icon = icon("shopping-cart"),
-               width = "300px",
+               width = "300px",startExpanded = T,
                br(),
                br(),
                tableOutput("table1"),
-               actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")#,
-               #startExpanded = T
+               actionButton("addButton", "Kaufen", style = "color: black;background-color: yellow")
                ),
   menuItem(tabName = "Impresum", text = "Impressum", icon = icon("heart")),
   menuItem(tabName = "Datenschutz", text = "Datenschutz", icon = icon("user-secret")),
@@ -121,13 +120,13 @@ dashboardBody(
                     textInput("plz", "PLZ"),
                     textInput("stadt", "Stadt")),
                   splitLayout(
-                    textInput("land", "Land"),checkboxInput("agb", label = HTML("Ich akzeptiere AGB & Widerruf <br/>  sowie die Datenschutzerklärung"), value = FALSE, width = NULL)
+                    textInput("land", "Land"), checkboxInput("agb", label = HTML("Ich akzeptiere AGB & Widerruf <br/>  sowie die Datenschutzerklärung"), value = FALSE, width = NULL)
                     
                   ),
                   splitLayout(
                     actionButton("addButton2", "Kaufen", style = "color: black;background-color: yellow"),
                     
-                    checkboxInput("kk", label = HTML("Ich wil per E-Mail benachichtigt werden, <br/> wenn ein neues Kartenspiel heraus kommt"), value = FALSE, width = NULL)
+                    checkboxInput("kk", label = HTML("Ich wil per E-Mail benachichtigt werden, <br/> wenn ein neues Produkt heraus kommt"), value = FALSE, width = NULL)
                   )
                 )))
                 ,
