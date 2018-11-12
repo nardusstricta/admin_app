@@ -25,8 +25,22 @@ kunden <<- drop_read_csv("/Apps/kunden.csv",
                                         "character","character",
                                         "character",
                                         "character","character", "numeric"))
+write.table(
+  kunden, "kunden.csv", 
+  sep = ",", col.names = F, append = F, row.names = F
+)
 
 
+bilanz <<- drop_read_csv("/Apps/bilanz.csv",
+                         colClasses = c("integer","character",
+                                        "character","numeric",
+                                        "numeric","character",
+                                        "character","character"))
+
+write.table(
+  bilanz, "bilanz.csv", 
+  sep = ",", col.names = F, append = F, row.names = F
+)
 
 #Preis Funktion:
 shinyUI(
@@ -120,13 +134,16 @@ dashboardBody(
                     textInput("plz", "PLZ"),
                     textInput("stadt", "Stadt")),
                   splitLayout(
-                    textInput("land", "Land"), checkboxInput("agb", label = HTML("Ich akzeptiere AGB & Widerruf <br/>  sowie die Datenschutzerklärung"), value = FALSE, width = NULL)
+                    textInput("land", "Land"), 
+                    checkboxInput("agb", label =  HTML("Ich akzeptiere <br/> AGB & Widerruf sowie <br/> die Datenschutzerklärung"), 
+                    value = FALSE, width = NULL)
                     
                   ),
                   splitLayout(
                     actionButton("addButton2", "Kaufen", style = "color: black;background-color: yellow"),
-                    
-                    checkboxInput("kk", label = HTML("Ich wil per E-Mail benachichtigt werden, <br/> wenn ein neues Produkt heraus kommt"), value = FALSE, width = NULL)
+                    checkboxInput("kk",
+                                  label = HTML("Ich will per E-Mail <br/> benachichtigt werden, <br/> wenn ein neues <br/> Produkt heraus kommt"),
+                                  value = FALSE, width = NULL)
                   )
                 )))
                 ,

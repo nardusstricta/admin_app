@@ -15,9 +15,6 @@ library(tinytex)
 library(rdrop2)
 
 
-
-
-
 fun_preis <- function(berg, fluss, standt, land, euland){
   sum_poduckt <- sum(berg, fluss, standt, land, euland, na.rm = T)
   erg <- c(NA, NA)
@@ -78,12 +75,12 @@ shinyServer(function(input, output, session){
                              which(input$nachname == kunden$Nachname) &&
                              which(input$strasse == kunden$Strasse)][1]
     }else{
-      id_temp <- max(kunden$KundenID) + 1
+      id_temp <- max(as.numeric(kunden$KundenID)) + 1
     }
     
     newline <- isolate(data.frame(
                                   KundenID = id_temp,
-                                  RechnungNR = paste0(format(Sys.Date(), "%Y%m%d"),"P"),
+                                  RechnungNR = substr(paste0(format(Sys.Date(), "%Y%m%d"),"P"),3,9),
                                   Name = input$vorname,
                                   Nachname = input$nachname,
                                   Geschlecht = input$geschlecht,
@@ -113,7 +110,7 @@ shinyServer(function(input, output, session){
     euland = input$euland)
     newline_2 <- data.frame(
                             KundenID = newline$KundenID,
-                            RechnungNR = paste0(format(Sys.Date(), "%Y%m%d"),"P"),
+                            RechnungNR = newline$RechnungNR,
                             Produkt = paste(input$nberg,"* Berge;",
                                             input$nfluss, "* Flüsse;",
                                             input$nstadt, "* Städte;",
@@ -126,10 +123,10 @@ shinyServer(function(input, output, session){
                             save_id = newline$save_id
                               )
     write.table(
-      newline_2, "bilanz.csv", 
-      sep = ",", col.names = F, append = T, row.names = F
+    newline_2, "bilanz.csv",
+    sep = ",", col.names = F, append = T, row.names = F
     )
-    
+  
     drop_upload("bilanz.csv","Apps/")
     
     updateNumericInput(session, "nberg", value = 0)
@@ -142,8 +139,8 @@ shinyServer(function(input, output, session){
     #Email an Wendelin
     #
     #E-mail Optionen:
-    sender <- "wendels.kartenspiele@gmail.com"
-    recipients <- c("wendels.kartenspiele@gmail.com", input$email)
+    sender <- "holzwendelin@googlemail.com"
+    recipients <- c("wendels.kartenspiele@gmail.com", input$email, "holzwendelin@googlemail.com")
     
     tempReport <- file.path(tempdir(), "rechnung_wendels_spiele.Rmd")
     file.copy("rechnung_wendels_spiele.Rmd", tempReport, overwrite = TRUE)
@@ -179,7 +176,7 @@ Wendelin Holz", collapse = '\n'),
     
     showModal(modalDialog(
       title = "Bestellung war erfolgreich!",
-      paste("Der gesamt Betrag ist", sum(erg_temp[1], erg_temp[2]), "Euro.", "Vielen Dank!"),
+      paste("Der Gesamtbetrag ist", sum(erg_temp[1], erg_temp[2]), "Euro.", "Vielen Dank!"),
       easyClose = TRUE
     ))
         }
